@@ -884,6 +884,7 @@
 		D29832961E4E249700352A5A /* GeoJsonGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29832951E4E249700352A5A /* GeoJsonGeometry.swift */; };
 		D30355D31B61401D00E1DDED /* GDAJSONObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D30355D21B61401D00E1DDED /* GDAJSONObject.m */; };
 		D395B0F71B41DA15005A6407 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D395B0F61B41DA15005A6407 /* Images.xcassets */; };
+		DC96D6992B972D9A00633441 /* GenericJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DC96D6982B972D9A00633441 /* GenericJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1834,6 +1835,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC96D6992B972D9A00633441 /* GenericJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5299,6 +5301,9 @@
 				91DC0CD22A423B2200244CC8 /* PBXTargetDependency */,
 			);
 			name = UnitTests;
+			packageProductDependencies = (
+				DC96D6982B972D9A00633441 /* GenericJSON */,
+			);
 			productName = UnitTests;
 			productReference = 914DEBCD2A3CE6B9007B161C /* UnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -5408,6 +5413,7 @@
 				286145E92625099F000E5525 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				283B0305264B03920092F74F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				91172A712AD8D56D00E6E8E9 /* XCRemoteSwiftPackageReference "CoreGPX" */,
+				DC96D6972B972D9A00633441 /* XCRemoteSwiftPackageReference "generic-json-swift" */,
 			);
 			productRefGroup = D3D7CFC91B3D96470020B5E9 /* Products */;
 			projectDirPath = "";
@@ -6533,6 +6539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = X4H33NKGKY;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -6565,8 +6572,9 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -6579,6 +6587,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.rcos.soundscape.UnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -6598,6 +6607,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4H33NKGKY;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -6976,6 +6986,14 @@
 				minimumVersion = 0.9.2;
 			};
 		};
+		DC96D6972B972D9A00633441 /* XCRemoteSwiftPackageReference "generic-json-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iwill/generic-json-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -7033,6 +7051,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 91172A712AD8D56D00E6E8E9 /* XCRemoteSwiftPackageReference "CoreGPX" */;
 			productName = CoreGPX;
+		};
+		DC96D6982B972D9A00633441 /* GenericJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC96D6972B972D9A00633441 /* XCRemoteSwiftPackageReference "generic-json-swift" */;
+			productName = GenericJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
