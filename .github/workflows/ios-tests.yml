@@ -19,9 +19,8 @@ jobs:
             - uses: actions/checkout@v4
             - name: setup
               run: |
-                # Find path of latest installed Xcode version
-                xcode_path="$(ls -d /Applications/Xcode*.app | grep -v -E 'Release_Candidate|Beta' | sort -V | tail -n1)"
-                echo "Xcode path: ${xcode_path}"
+                # use xcode 16.1
+                xcode_path=/Applications/Xcode_16.1.app
                 sudo xcode-select -s "${xcode_path}/Contents/Developer"
                 xcodebuild -version
                 sim_device=$(xcrun simctl list devices available iPhone -j |jq -r '[.devices | to_entries[] | select(.key | startswith("com.apple.CoreSimulator.SimRuntime.iOS"))|.value[0].name][0] ')
