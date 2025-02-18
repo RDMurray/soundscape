@@ -14,17 +14,15 @@ on:
     workflow_dispatch:
 jobs:
     unit-tests:
-        runs-on: macos-latest
+        runs-on: macos-14
         steps:
             - uses: actions/checkout@v4
             - name: setup
               run: |
-                # use xcode 16.1
+                # when updating, see https://github.com/actions/runner-images/blob/main/images/macos/macos-14-Readme.md for supported versions
                 xcode_path=/Applications/Xcode_16.1.app
                 sudo xcode-select -s "${xcode_path}/Contents/Developer"
                 xcodebuild -version
-                # sim_device=$(xcrun simctl list devices available iPhone -j |jq -r '[.devices | to_entries[] | select(.key | startswith("com.apple.CoreSimulator.SimRuntime.iOS"))|.value[0].name][0] ')
-                # echo sim_device=${sim_device} >> $GITHUB_ENV
                 gem install xcpretty
             - name: Build
               run: >
